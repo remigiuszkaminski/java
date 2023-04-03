@@ -1,4 +1,3 @@
-import java.lang.Math;
 public class Walec {
     
     private double podstawa;
@@ -7,7 +6,7 @@ public class Walec {
     public double getPodstawa() {
         return podstawa;
     }
-    public double getWysokosc() {
+    public double getWysokosc() {// import java.lang.Math;
         return wysokosc;
     }
 
@@ -24,8 +23,7 @@ public class Walec {
     }
 
     public Walec() {
-        this.podstawa = null;
-        this.wysokosc = null;
+        
     }
 
     public double liczPolePod() {
