@@ -5,7 +5,8 @@ public class Main {
         System.out.println("Jest to program do wykonywania obliczen na Walcu.");
         Walec nowy = new Walec();
         int opcja;
-        while(true) {
+        boolean switcher = true;
+        while(switcher) {
             System.out.println("Wybierz jedna z opcji: \n" + "1 - Wyswietl wartosci zmiennych instancji klasy Walec \n" + "2 - Zmien Wartosci obiektu klasy Walec \n" + "3 - Oblicz pola powierzchni oraz objetosci obiektu klasy Walec \n" + "4 - Wyjdz z programu \n" );
             opcja = sc.nextInt();
             switch (opcja) {
@@ -24,8 +25,9 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Koniec programu \n");
+                    switcher = false;
                     sc.close();
-                    System.exit(0);
+                    break;
                 case default:
                     System.out.println("Zla opcja \n");
                     break;
