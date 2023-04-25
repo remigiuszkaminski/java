@@ -2,10 +2,10 @@ import java.time.LocalTime;
 public class Spotkanie {
     public static final LocalTime MIN_TIME = LocalTime.of(8, 0);
     
-    private final String opis;
-    private final LocalTime poczatek;
-    private final LocalTime koniec;
-    private final String waznosc;
+    private String opis;
+    private LocalTime poczatek;
+    private LocalTime koniec;
+    private String waznosc;
 
     public Spotkanie(String opis, LocalTime poczatek, LocalTime koniec, String waznosc) {
         this.opis = opis;
