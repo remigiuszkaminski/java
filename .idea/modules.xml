@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Calendar/Calendar.iml" filepath="$PROJECT_DIR$/Calendar/Calendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exp/Exp.iml" filepath="$PROJECT_DIR$/Exp/Exp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Grade/Grade.iml" filepath="$PROJECT_DIR$/Grade/Grade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaST.iml" filepath="$PROJECT_DIR$/JavaST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab02/lab02.iml" filepath="$PROJECT_DIR$/lab02/lab02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proj1/proj1.iml" filepath="$PROJECT_DIR$/proj1/proj1.iml" />
+    </modules>
+  </component>
+</project>
