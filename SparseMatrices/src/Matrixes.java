@@ -26,7 +26,7 @@ public class Matrixes {
     public static double[][] matrixBandRow(int size, int band) {
         double[][] matrix2 = new double[size][size];
         for (int i = 0; i < size; i++) {
-            for (int j = Math.max(0, i - band); j < Math.min(size, i + band + 1); j++) {
+            for (int j = Math.max(0, i - band); j <= i; j++) {
                 matrix2[i][j] = getRandomDouble();
             }
         }
@@ -76,6 +76,44 @@ public class Matrixes {
         }
         return matrix;
     }
+
+    public static double[] matrixB (int size) {
+        double[] matrixB = new double[size];
+        for (int i = 0; i < size; i++) {
+            matrixB[i] = getRandomDouble();
+        }
+        return matrixB;
+    }
+
+    public static double[] multiplyRow(double[][] matrixA, double[] matrixX) {
+        double[] matrixAX = new double[matrixA.length];
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j < matrixA.length; j++) {
+                matrixAX[i] += matrixA[i][j] * matrixX[j];
+            }
+        }
+
+        return matrixAX;
+    }
+
+    public static double[] multiplyCol(double[][] matrixA, double[] matrixX) {
+        double[] matrixAX = new double[matrixA.length];
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j < matrixA.length; j++) {
+                matrixAX[i] += matrixA[j][i] * matrixX[j];
+            }
+        }
+        return matrixAX;
+    }
+
+    public static double calcErr(double[] matrixAX, double[] matrixB) {
+        double err = 0;
+        for (int i = 0; i < matrixAX.length; i++) {
+            err += Math.abs(matrixAX[i] - matrixB[i]);
+        }
+        return (err/matrixAX.length);
+    }
+
 
 
     private static double getRandomDouble() {

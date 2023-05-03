@@ -25,12 +25,11 @@ public class MySparseMatrix {
 
         for (int k = 0; k < N; k++) {
                 for (int i = k + 1; i < N; i++) {
-                    double factor = A[i][k];
-                    A[i][k] = 0;
+                    double factor = A[i][k] / A[k][k];
+                    B[i] -= factor * B[k];
                     for (int j = k + 1; j < N; j++) {
                         A[i][j] -= factor * A[k][j];
                     }
-                    B[i] -= factor * B[k];
                 }
             }
         return calculateMatrix(N, A, B);
