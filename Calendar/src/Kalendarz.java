@@ -1,4 +1,6 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public class Kalendarz {
 
@@ -27,10 +29,30 @@ public class Kalendarz {
         return this.spotkania.get(dzien);
     }
 
-    public ArrayList<Spotkanie> getWaznoscDzien(int dzien, String waznosc) {
+    public Predicate<Spotkanie> getSpotkaniaDzien(int dzien) {
+        return e -> true;
+    }
+
+    public Predicate<Spotkanie> getSpotkaniaOdGodziny(LocalTime start) {
+        return e -> e.getPoczatek().compareTo(start) >= 0;
+    }
+
+    public Predicate<Spotkanie> getWaznosc(String waznosc) {
+        return (Spotkanie spotkanie) -> spotkanie.getWaznosc().equals(waznosc);
+    }
+
+    public Predicate<Spotkanie> getWaznoscGodzina(String waznosc, LocalTime start) {
+        return e -> e.getWaznosc().equals(waznosc) && e.getPoczatek().compareTo(start) >= 0;
+    }
+
+    public Predicate<Spotkanie> getOdGodzinyDoGodziny(LocalTime start, LocalTime end) {
+        return e -> e.getPoczatek().compareTo(start) >= 0 && e.getKoniec().compareTo(end) <= 0;
+    }
+
+    public ArrayList<Spotkanie> getDzien(int dzien, Predicate<Spotkanie> condition) {
         ArrayList<Spotkanie> wazne = new ArrayList<>();
         for (Spotkanie spotkanie : this.spotkania.get(dzien)) {
-            if (spotkanie.getWaznosc().equals(waznosc)) {
+            if (condition.test(spotkanie)) {
                 wazne.add(spotkanie);
             }
         }

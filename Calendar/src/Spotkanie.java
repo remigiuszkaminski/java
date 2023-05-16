@@ -17,8 +17,17 @@ public class Spotkanie {
     public String getWaznosc() {
         return waznosc;
     }
+    
+    public LocalTime getPoczatek() {
+        return poczatek;
+    }
 
-    public String getSpotkanie() {
-        return(this.opis + " " + this.poczatek + " " + this.koniec + " " + this.waznosc);
+    public LocalTime getKoniec() {
+        return koniec;
+    }
+
+    @Override
+    public String toString() {
+        return "\nopis : " + this.opis + "\ngodzina rozpoczecia: " + this.poczatek + "\ngodzina zakonczenia : " + this.koniec + "\nWaznosc spotkania : " + this.waznosc;
     }
 }
